@@ -17,6 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+Route::domain('pastes.laravel.link')->group(function () {
+    Route::get('/', function ($account, $id) {
+        return "test";
+    });
+});
+
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
