@@ -16,9 +16,15 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::domain('https://pastes.laravel.link')->group(function () {
+
     Route::get('/', function () {
-        return "test";
+        return "paste home page";
     });
+
+    Route::get('/paste/{paste:slug}', function () {
+        return "paste view";
+    });
+
 });
 
 Route::domain('https://profile.laravel.link')->group(function () {
