@@ -13,16 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 
 Route::domain('https://pastes.laravel.link')->group(function () {
     Route::get('/', function () {
         return "test";
     });
 });
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
