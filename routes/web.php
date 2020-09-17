@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 
 Route::domain('pastes.laravel.link')->group(function () {
-    Route::get('/', function ($account, $id) {
+    Route::get('/', function () {
         return "test";
     });
 });
