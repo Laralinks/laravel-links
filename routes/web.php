@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\User;
+use App\Http\Controllers\PasteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,12 +25,11 @@ Route::domain('https://pastes.laravel.link')->group(function () {
     Route::get('/paste', function () {
         return "paste create view";
     });
-    Route::get('/edit/{paste:slug}', function () {
+    Route::get('/paste/{paste:slug}/edit', function () {
         return "paste edit view";
     });
-    Route::get('/paste/{paste:slug}', function () {
-        return "paste view";
-    });
+    Route::get('/paste/{paste:title}', [PasteController::class, 'show']);
+
 });
 
 Route::domain('https://profile.laravel.link')->group(function () {
@@ -53,6 +53,8 @@ Route::domain('https://laravel.link')->group(function () {
 
 });
 
-Route::get('/', function () {
+Route::get('/welcome', function () {
     return view('welcome');
 });
+
+Route::get('/test/{paste:title}', [PasteController::class, 'show']);

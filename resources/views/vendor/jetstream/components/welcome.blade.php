@@ -9,7 +9,6 @@
     </div>
 
     <div class=" text-gray-500 italic">
-
         <p class="">Test</p>
 
     </div>
