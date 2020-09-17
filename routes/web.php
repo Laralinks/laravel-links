@@ -40,6 +40,6 @@ Route::domain('https://laravel.link')->group(function () {
         return view('dashboard');
     })->name('dashboard');
 
-)};
+});
 
 
