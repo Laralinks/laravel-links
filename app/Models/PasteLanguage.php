@@ -13,6 +13,7 @@ class PasteLanguage extends Model
 
     public function paste()
     {
-        return $this->belongsTo(Paste::class, 'pastelanguage_id');
+        return $this->belongsTo(Paste::class, 'paste_language_id');
     }
+
 }
