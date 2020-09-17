@@ -28,7 +28,7 @@ Route::domain('https://pastes.laravel.link')->group(function () {
     Route::get('/paste/{paste:slug}/edit', function () {
         return "paste edit view";
     });
-    Route::get('/paste/{paste:title}', [PasteController::class, 'show']);
+    Route::get('/{paste:title}', [PasteController::class, 'show']);
 
 });
 
