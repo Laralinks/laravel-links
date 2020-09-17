@@ -21,9 +21,19 @@ Route::domain('https://pastes.laravel.link')->group(function () {
         return "paste home page";
     });
 
+
+    Route::get('/paste', function () {
+        return "paste create view";
+    });
+
+    Route::get('/edit/{paste:slug}', function () {
+        return "paste edit view";
+    });
+
     Route::get('/paste/{paste:slug}', function () {
         return "paste view";
     });
+
 
 });
 
