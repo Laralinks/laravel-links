@@ -20,6 +20,15 @@ Route::domain('https://pastes.laravel.link')->group(function () {
     });
 });
 
+Route::domain('https://profile.laravel.link')->group(function () {
+    Route::get('/', function () {
+        return "your profile";
+    });
+    Route::get('/{user:name}', function ($user) {
+        return "{$user} profile";
+    });
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
