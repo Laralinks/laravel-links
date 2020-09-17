@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,8 +25,8 @@ Route::domain('https://profile.laravel.link')->group(function () {
     Route::get('/', function () {
         return "your profile";
     });
-    Route::get('/{user:name}', function ($user) {
-        return "{$user} profile";
+    Route::get('/{user:name}', function (User $user) {
+        return "{$user->name} profile";
     });
 });
 
