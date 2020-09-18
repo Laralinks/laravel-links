@@ -35,9 +35,8 @@
             </div>
         @endif --}}
 
-        <main>
-            <div class="container px-4">
-
+        <main class="w-full">
+            <div class="container mx-auto">
                 <div class="flex flex-col lg:flex-row my-10">
 
 
