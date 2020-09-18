@@ -19,9 +19,8 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::domain('https://pastes.laravel.link')->group(function () {
-    Route::get('/', function () {
-        return "paste home page";
-    });
+    Route::get('/', [PasteController::class, 'index']);
+
     Route::get('/paste', function () {
         return "paste create view";
     });
@@ -56,5 +55,8 @@ Route::domain('https://laravel.link')->group(function () {
 Route::get('/welcome', function () {
     return view('welcome');
 });
+
+
+Route::get('/test', [PasteController::class, 'index']);
 
 Route::get('/test/{paste:title}', [PasteController::class, 'show']);
