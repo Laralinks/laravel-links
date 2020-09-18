@@ -18,9 +18,11 @@ class CreatePastesTable extends Migration
             $table->foreignId('user_id')->index()->nullable();
             $table->foreignId('paste_language_id');
             $table->string('title');
-            $table->string('code');
-            $table->boolean('private');
+            $table->text('description');
+            $table->longText('code');
+            $table->boolean('private')->default(false);
             $table->string('password')->nullable();
+            $table->foreignId('fork')->default(null)->nullable()->references('id')->on('pastes');
             $table->timestamps();
         });
     }

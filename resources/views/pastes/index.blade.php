@@ -43,7 +43,7 @@
 
 
 
-                    <div class="w-5/6  mr-0 lg:mr-32">
+                    <div class="min-w-full  mr-0 lg:mr-32">
 
                         <!-- This is an example component -->
                         <div id="wrapper" class="">
@@ -80,23 +80,23 @@
 
 
                         <div class="py-1">
-                            <div class="" max-w-7xl mx-auto sm:px-6 lg:px-8"">
+                            <div class=" min-w-full mx-auto sm:px-6 lg:px-8">
                                 <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                                     <div class="p-3 sm:px-20 bg-white border-b border-gray-200">
                                         <div class="mt-2 text-2xl text-center">
                                             Latest Pastes
                                         </div>
                                     </div>
-                                    <div class="bg-gray-200 bg-opacity-25 ">
+                                    <div class="">
                                         @forelse($pastes as $paste)
-                                        <div class="max-w-4xl px-10 py-6 border-b border-gray-200 md:border-t-0 md:border-l">
+                                        <div class="{{$loop->even == 1 ? 'bg-gray-200' : 'bg-gray-500'}} bg-opacity-25 min-w-full px-10 py-6 border-b border-gray-200 md:border-t-0 md:border-l">
                                             <div class="flex justify-between items-center">
                                                 <span class="font-light text-gray-600">{{ $paste->created_at->diffForHumans()}}</span>
                                                 <a class="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500" href="#">{{$paste->pastelanguage->name}}</a>
                                             </div>
                                             <div class="mt-2">
                                                 <a class="text-2xl text-gray-700 font-bold hover:text-gray-600" href="#">{{ $paste->title }}</a>
-                                                <p class="mt-2 text-gray-600"><code>{{$paste->code}}</code></p>
+                                                <p class="mt-2 text-gray-600"><code>{{$paste->description}}</code></p>
                                             </div>
                                             <div class="flex justify-between items-center mt-4">
                                                 <a class="text-blue-600 hover:underline" href="/{{$paste->title}}">View Paste</a>
