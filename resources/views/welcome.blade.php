@@ -31,6 +31,8 @@
                             <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
                         @endif
                     @endif
+                    <a href="{{ url('https://pastes.laravel.link') }}" class="text-sm text-gray-700 underline">Pastes</a>
+
                 </div>
             @endif
 

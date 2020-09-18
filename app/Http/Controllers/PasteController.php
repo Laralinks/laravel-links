@@ -9,6 +9,6 @@ class PasteController extends Controller
 {
     public function show(Paste $paste)
     {
-        return $paste;
+        return $paste->where('id', $paste->id)->with('pastelanguage', 'user')->get();
     }
 }
