@@ -20,7 +20,7 @@
 </head>
 <body class="font-sans antialiased">
     <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
-        @if (Route::has('login'))
+   {{--      @if (Route::has('login'))
             <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                 @auth
                     <a href="{{ url('https://laravel.link/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
@@ -33,7 +33,7 @@
                 <a href="{{ url('https://pastes.laravel.link') }}" class="ml-4 text-sm text-gray-700 underline">Pastes</a>
 
             </div>
-        @endif
+        @endif --}}
 
         <main>
             <div class="container px-4">
@@ -90,7 +90,7 @@
                                     <div class="">
                                         @forelse($pastes as $paste)
                                         <div class="{{$loop->even == 1 ? 'bg-gray-200' : 'bg-gray-500'}} bg-opacity-25 min-w-full px-10 py-6 border-b border-gray-200 md:border-t-0 md:border-l">
-                                            <div class="flex justify-between items-center">
+                                            <div class="justify-between items-center flex">
                                                 <span class="font-light text-gray-600">{{ $paste->created_at->diffForHumans()}}</span>
                                                 <a class="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500" href="#">{{$paste->pastelanguage->name}}</a>
                                             </div>
