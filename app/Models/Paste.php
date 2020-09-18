@@ -11,6 +11,11 @@ class Paste extends Model
 
     protected $guarded = [];
 
+    protected $with = [
+        'user',
+        'pastelanguage'
+    ];
+
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');

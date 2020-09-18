@@ -36,39 +36,39 @@
         @endif
 
         <main>
-            <div class="container mx-auto px-4">
+            <div class="container px-4">
 
                 <div class="flex flex-col lg:flex-row my-10">
 
 
 
 
-                    <div class="min-w-full  mr-0 lg:mr-32">
+                    <div class="min-w-full  mr-0 lg:mr-16">
 
                         <!-- This is an example component -->
                         <div id="wrapper" class="">
                             <div class="flex sm:grid sm:h-32 sm:grid-flow-row sm:gap-4 sm:grid-cols-3">
 
                                 <div class="">
-                                    <div id="jh-stats-positive" class="flex flex-col justify-center px-4 py-4 bg-white border border-gray-300 rounded">
+                                    <div id="jh-stats-positive" class="flex flex-col justify-center px-4 py-4 bg-white border border-gray-500 rounded-full overflow-hidden shadow-2xl">
                                         <div>
-                                            <p class="text-3xl font-semibold text-center text-gray-800">{{$totalPastes}}</p>
+                                            <p class="text-3xl font-semibold text-center text-gray-800">{{ $totals->total }}</p>
                                             <p class="text-lg text-center text-gray-500">Total Pastes</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="">
-                                    <div id="jh-stats-positive" class="flex flex-col justify-center px-4 py-4 bg-white border border-gray-300 rounded">
+                                    <div id="jh-stats-positive" class="flex flex-col justify-center px-4 py-4 bg-white border border-gray-500 rounded-full overflow-hidden shadow-2xl">
                                         <div>
-                                            <p class="text-3xl font-semibold text-center text-gray-800">{{$pastes->total()}}</p>
+                                            <p class="text-3xl font-semibold text-center text-gray-800">{{$totals->public}}</p>
                                             <p class="text-lg text-center text-gray-500">Public Pastes</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="">
-                                    <div id="jh-stats-positive" class="flex flex-col justify-center px-4 py-4 bg-white border border-gray-300 rounded">
+                                    <div id="jh-stats-positive" class="flex flex-col justify-center px-4 py-4 bg-white border border-gray-500 rounded-full overflow-hidden shadow-2xl">
                                         <div>
-                                            <p class="text-3xl font-semibold text-center text-gray-800">*todo*</p>
+                                        <p class="text-3xl font-semibold text-center text-gray-800">{{$totals->forks}}</p>
                                             <p class="text-lg text-center text-gray-500">Total Forks</p>
                                         </div>
                                     </div>
@@ -81,7 +81,7 @@
 
                         <div class="py-1">
                             <div class=" min-w-full mx-auto sm:px-6 lg:px-8">
-                                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg rounded-lg">
                                     <div class="p-3 sm:px-20 bg-white border-b border-gray-200">
                                         <div class="mt-2 text-2xl text-center">
                                             Latest Pastes
@@ -95,7 +95,7 @@
                                                 <a class="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500" href="#">{{$paste->pastelanguage->name}}</a>
                                             </div>
                                             <div class="mt-2">
-                                                <a class="text-2xl text-gray-700 font-bold hover:text-gray-600" href="#">{{ $paste->title }}</a>
+                                                <a class="text-2xl text-gray-700 font-bold hover:text-gray-600" href="#">{{ $paste->title }}</a>{{$paste->fork ? '(Forked)' : ''}}
                                                 <p class="mt-2 text-gray-600"><code>{{$paste->description}}</code></p>
                                             </div>
                                             <div class="flex justify-between items-center mt-4">
