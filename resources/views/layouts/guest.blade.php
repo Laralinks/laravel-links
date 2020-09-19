@@ -15,6 +15,9 @@
 
         <!-- Scripts -->
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.2.1/dist/alpine.js" defer></script>
+        <!-- Fathom - beautiful, simple website analytics -->
+<script src="https://cdn.usefathom.com/script.js" site="WIHCYMPB" defer></script>
+<!-- / Fathom -->
     </head>
     <body>
         <div class="font-sans text-gray-900 antialiased">
